@@ -1,5 +1,5 @@
 let table = $('#dataTableHover-qna').DataTable();
-// table.columns(5).search( '미답변' ).draw();
+table.columns(5).search( '미답변' ).draw();
 
   
 // $('#state').on('change', function () {
@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function(){
   })
 
   let table = $('#dataTableHover-answered').DataTable();
+  table.columns(5).search( '답변 완료' ).draw();
+
 });
 
 function showStatus(status){

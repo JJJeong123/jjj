@@ -1,5 +1,5 @@
-// let table = $('#dataTableHover-comment').DataTable();
-// table.columns(5).search( '미답변' ).draw();
+let table = $('#dataTableHover-comment').DataTable();
+table.columns(5).search( '미답변' ).draw();
 
   
 // $('#state').on('change', function () {

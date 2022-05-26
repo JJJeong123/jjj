@@ -54,8 +54,10 @@
         <div class="card-body justify-content-center">
           <div class="row align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-uppercase mb-1">상위 품목 5개</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">하루</div>
+              <div class="row mx-1 mb-3">
+                <div class="h5 mb-0 font-weight-bold text-gray-800 mr-2">하루</div>
+                <small class="mr-3 pt-1 font-weight-bold text-gray">상위 품목 5개</small>
+              </div>
               <div class="chart-wrap">
                 <canvas id="myChart"></canvas>
                 {% for name in today_name %}
@@ -79,8 +81,10 @@
         <div class="card-body justify-content-center">
           <div class="row align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-uppercase mb-1">상위 품목 5개</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">일주일</div>
+              <div class="row mx-1 mb-3">
+                <div class="h5 mb-0 font-weight-bold text-gray-800 mr-2">일주일</div>
+                <small class="mr-3 pt-1 font-weight-bold text-gray">상위 품목 5개</small>
+              </div>
               <div class="chart-wrap">
                 <canvas id="myChart2"></canvas>
                 {% for name in week_name %}
@@ -102,10 +106,10 @@
     <div class="col-xl-4 col-md-6 mb-4">
       <div class="card h-200 py-2">
         <div class="card-header">
-          <div class="row mx-2">
-            <span class="fas fa-ban text-primary mr-2 pt-1"></span>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">오늘 매출 현황</div>
-            <div class="h6 mr-3 pt-1 font-weight-bold text-primary">주문/취소 금액</div>
+          <div class="row mx-2 mb-3">
+            <span class="fas fa-chart-pie text-primary mr-2 pt-1"></span>
+            <div class="h5 mb-0 font-weight-bold text-gray-800 mr-2">오늘 매출 현황</div>
+            <small class="mr-3 pt-1 font-weight-bold text-primary">주문/취소 금액</small>
           </div>
         </div>
         <div class="card-body px-3 py-0">
@@ -125,11 +129,11 @@
   <div class="row">
     
     </div>
-    <div class="col-xl-8 col-md-12 mb-3">
-      <div class="card h-100 py-2">
+    <div class="col-xl-12 col-md-12 mb-3">
+      <div class="card h-100 px-2 pb-4">
         <div class="card-header">
           <div class="row mx-2">
-            <span class="fas fa-ban text-primary mr-2 pt-1"></span>
+            <span class="fas fa-chart-line text-primary mr-2 pt-1"></span>
             <div class="h5 mb-0 font-weight-bold text-gray-800">1년 매출 현황</div>
           </div>
         </div>

@@ -198,9 +198,16 @@ class recommendView(LoginRequiredMixin, View):
         q.add(Q(status=constants.CANCEL_PROCESSING), q.OR)
         q.add(Q(status=constants.CANCEL_RECEIVED), q.OR)
 
+        b = Q()
+        b.add(Q(status=constants.PAID), b.OR)
+        b.add(Q(status=constants.COMPLETED), b.OR)
+        b.add(Q(status=constants.PROCESSING), b.OR)
+        b.add(Q(status=constants.SHIPPING), b.OR)
+        b.add(Q(status=constants.DELIVERED), b.OR)
+
         #today_sales = list(order_product.objects.filter(created_at__range=['2022-05-19', '2022-05-20'],product__shop_id=1, DeleteFlag='0',status=constants.PAID).values('product_id','id','amount'))
         #today_canceled = list((order_product.objects.filter(q)&order_product.objects.filter(created_at__range=['2022-05-19', '2022-05-20'],product__shop_id=1, DeleteFlag='0')).values('product_id','id','amount'))
-        today_sales = list(order_product.objects.filter(created_at__range=[date.today(), date.today() + timedelta(days=1)],product__shop_id=memberShopId, DeleteFlag='0',status=constants.PAID).values('product_id','amount'))
+        today_sales = list((order_product.objects.filter(b)&order_product.objects.filter(created_at__range=[date.today(), date.today() + timedelta(days=1)],product__shop_id=memberShopId, DeleteFlag='0')).values('product_id','amount'))
         today_canceled = list((order_product.objects.filter(q)&order_product.objects.filter(created_at__range=[date.today(), date.today() + timedelta(days=1)],product__shop_id=memberShopId, DeleteFlag='0')).values('product_id','amount'))
         salesPrice = totalPrice(today_sales)
         cancelPrice = totalPrice(today_canceled)
