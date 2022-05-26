@@ -130,6 +130,7 @@ var mylineChart = new Chart(chartArea1, {
         }]
     },
     options: {
+      responsive: true,
         scales: {
             y: {
                 beginAtZero: true

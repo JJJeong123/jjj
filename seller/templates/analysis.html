@@ -41,10 +41,11 @@
 
 <div class="container-fluid" id="container-wrapper">
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <h1 class="h3 mb-0 text-gray-800">매출 현황</h1>
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="./">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+      <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+      <li class="breadcrumb-item">정산 관리</li>
+      <li class="breadcrumb-item active" aria-current="page">매출 현황</li>
     </ol>
   </div>
 
@@ -54,9 +55,10 @@
         <div class="card-body justify-content-center">
           <div class="row align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-uppercase mb-1">상위 품목 5개</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">하루</div>
-              <div class="chart-wrap">
+              <div class="row mx-1 mb-3">
+                <div class="h5 mb-0 font-weight-bold text-gray-800 mr-2">하루</div>
+                <small class="mr-3 pt-1 font-weight-bold text-gray">상위 품목 5개</small>
+              </div>              <div class="chart-wrap">
                 <canvas id="myChart"></canvas>
                 {% for name in today_name %}
                 <ul class="today_name">
@@ -79,8 +81,10 @@
         <div class="card-body justify-content-center">
           <div class="row align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-uppercase mb-1">상위 품목 5개</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">일주일</div>
+              <div class="row mx-1 mb-3">
+                <div class="h5 mb-0 font-weight-bold text-gray-800 mr-2">일주일</div>
+                <small class="mr-3 pt-1 font-weight-bold text-gray">상위 품목 5개</small>
+              </div>
               <div class="chart-wrap">
                 <canvas id="myChart2"></canvas>
                 {% for name in week_name %}
@@ -102,10 +106,10 @@
     <div class="col-xl-4 col-md-6 mb-4">
       <div class="card h-200 py-2">
         <div class="card-header">
-          <div class="row mx-2">
-            <span class="fas fa-ban text-primary mr-2 pt-1"></span>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">오늘 매출 현황</div>
-            <div class="h6 mr-3 pt-1 font-weight-bold text-primary">주문/취소 금액</div>
+          <div class="row mx-2 mb-3">
+            <span class="fas fa-chart-pie text-primary mr-2 pt-1"></span>
+            <div class="h5 mb-0 font-weight-bold text-gray-800 mr-2">오늘 매출 현황</div>
+            <small class="mr-3 pt-1 font-weight-bold text-primary">주문/취소 금액</small>
           </div>
         </div>
         <div class="card-body px-3 py-0">
@@ -121,19 +125,16 @@
           </div>
         </div>
       </div>
-  </div>
-  <div class="row">
-    
     </div>
-    <div class="col-xl-8 col-md-12 mb-3">
+    <div class="col-xl-12 col-md-12 mb-3">
       <div class="card h-100 py-2">
         <div class="card-header">
           <div class="row mx-2">
-            <span class="fas fa-ban text-primary mr-2 pt-1"></span>
+            <span class="fas fa-chart-line text-primary mr-2 pt-1"></span>
             <div class="h5 mb-0 font-weight-bold text-gray-800">1년 매출 현황</div>
           </div>
         </div>
-        <div class="card-body px-3 py-0">
+        <div class="card-body px-3 pt-0 pb-4">
           <div class="col">
             <div class="chart-area">
               <canvas id="mixedChart" width="400" height="166"></canvas>
@@ -153,30 +154,7 @@
       </div>
     </div>
   </div>
-  <!-- Modal Logout -->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Are you sure you want to logout?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-          <a href="/logout" class="btn btn-primary">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-
-
 
 {% endblock content %}
 
