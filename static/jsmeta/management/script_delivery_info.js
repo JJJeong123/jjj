@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
           if(data.status === Completed){
             setAttributes(input, {
-              'checked': true,
             });
           }
           setAttributes(td,{
