@@ -15,88 +15,128 @@
     </div>
 
     {% if staff %}
-    <div class="row mb-3">
-      <!-- Earnings (Monthly) Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
+    <div class="row">
+      <div class="col-xl-12 col-md-12 mb-3">
+        <div class="card h-100 py-2">
+          <div class="card-header pb-0">
+            <div class="row mx-2">
+              <span class="fas fa-file text-primary mr-2 pt-1"></span>
+              <div class="h6 mr-3 pt-1 font-weight-bold text-primary">상품준비완료 현황</div>
+              <a href="{% url 'index' %}" >
+                <span class="fas fa-sync-alt text-secondary pt-1" data-fa-transform="shrink-3 down-2" style="cursor:pointer;"></span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body px-3 py-0">
             <div class="row align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-uppercase mb-1">Earnings (Monthly)</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                <div class="mt-2 mb-0 text-muted text-xs">
-                  <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                  <span>Since last month</span>
+              <div class="col-xl-3 col-md-6 border-right">
+                <div class="card h-100 pt-3" style="box-shadow: none !important;">
+                  <div class="card-body py-0 px-3 mb-4">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mx-1">
+                        <div class="h5 mb-2 text-gray-800">택배배송</div>
+                        <a href="{% url 'management:delivery' %}" >
+                          <span class="h4 mx-1 font-weight-bold text-primary">{{ Delivery }}</span>
+                          <span>건</span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-truck fa-2x text-secondary"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-auto">
-                <i class="fas fa-calendar fa-2x text-primary"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Earnings (Annual) Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-uppercase mb-1">Sales</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">650</div>
-                <div class="mt-2 mb-0 text-muted text-xs">
-                  <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                  <span>Since last years</span>
+              <div class="col-xl-3 col-md-6 border-right">
+                <div class="card h-100 pt-3 py-0" style="box-shadow: none !important;">
+                  <div class="card-body py-0 px-3 mb-4">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mx-1">
+                        <div class="h5 mb-2 text-gray-800">근거리배송</div>
+                        <a href="{% url 'management:shortdelivery' %}" >
+                          <span class="h4 mx-1 font-weight-bold text-primary">{{ Shortdelivery }}</span>
+                          <span>건</span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-motorcycle fa-2x text-warning"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-auto">
-                <i class="fas fa-shopping-cart fa-2x text-success"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- New User Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-uppercase mb-1">New User</div>
-                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">366</div>
-                <div class="mt-2 mb-0 text-muted text-xs">
-                  <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
-                  <span>Since last month</span>
+              <div class="col-xl-3 col-md-6 border-right">
+                <div class="card h-100 pt-3 py-0" style="box-shadow: none !important;">
+                  <div class="card-body py-0 px-3 mb-4">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mx-1">
+                        <div class="h5 mb-2 text-gray-800">포장</div>
+                        <a href="{% url 'management:pickup' %}" >
+                          <span class="h4 mx-1 font-weight-bold text-primary">{{ Pickup }}</span>
+                          <span>건</span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-person-walking fa-2x text-info"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-auto">
-                <i class="fas fa-users fa-2x text-info"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Pending Requests Card Example -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div class="text-xs font-weight-bold text-uppercase mb-1">Pending Requests</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                <div class="mt-2 mb-0 text-muted text-xs">
-                  <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                  <span>Since yesterday</span>
+              <div class="col-xl-3 col-md-6">
+                <div class="card h-100 pt-3 py-0" style="box-shadow: none !important;">
+                  <div class="card-body py-0 px-3 mb-4">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mx-1">
+                        <div class="h5 mb-2 text-gray-800">드라이브스루</div>
+                        <a href="{% url 'management:drivethru' %}" >
+                          <span class="h4 mx-1 font-weight-bold text-primary">{{ Drivethru }}</span>
+                          <span>건</span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-car-side fa-2x text-success"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="col-auto">
-                <i class="fas fa-comments fa-2x text-warning"></i>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-xl-4 col-md-12 mb-3">
+        <div class="card h-100 py-2">
+          <div class="card-header">
+            <div class="row mx-2">
+              <span class="fas fa-phone text-primary mr-2 pt-1"></span>
+              <a href="{% url 'seller:qna' %}">
+                <div class="h6 mr-3 pt-1 font-weight-bold text-primary">미답변 문의</div>
+              </a>
+              <a href="{% url 'index' %}">
+                <span class="fas fa-sync-alt text-secondary pt-1" data-fa-transform="shrink-3 down-2" style="cursor:pointer;"></span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body px-3 pt-0">
+            <div class="col mb-2 text-secondary">
+              <a href="#" style="text-decoration: none;">
+                <div class="row px-3 justify-content-between">
+                  <div>상품 문의</div>
+                  <div>
+                    <span class="h4 mx-1 font-weight-bold text-primary">{{ Paid }}</span>
+                    <span>건</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     {% else %}
     <div class="row">
       <div class="col-xl-12 col-md-12 mb-3">
@@ -105,7 +145,7 @@
             <div class="row mx-2">
               <span class="fas fa-file text-primary mr-2 pt-1"></span>
               <div class="h6 mr-3 pt-1 font-weight-bold text-primary">판매 현황</div>
-              <a href="./" >
+              <a href="{% url 'index' %}" >
                 <span class="fas fa-sync-alt text-secondary pt-1" data-fa-transform="shrink-3 down-2" style="cursor:pointer;"></span>
               </a>
             </div>
@@ -241,7 +281,7 @@
                 </div>
               </div>
               <div class="row px-3 mb-2 justify-content-between">
-                <div>취소 환불 요청</div>
+                <div>취소 반품 요청</div>
                 <div>
                   <span class="h4 mx-1 font-weight-bold text-primary">{{ Paid }}</span>
                   <span>건</span>
@@ -255,7 +295,7 @@
                 </div>
               </div>
               <div class="row px-3 mb-2 justify-content-between">
-                <div>반품 환불 요청</div>
+                <div>반품 반품 요청</div>
                 <div>
                   <span class="h4 mx-1 font-weight-bold text-primary">{{ Paid }}</span>
                   <span>건</span>
@@ -334,8 +374,10 @@
         <div class="card h-100 py-2">
           <div class="card-header">
             <div class="row mx-2">
-              <span class="fas fa-ban text-primary mr-2 pt-1"></span>
-              <div class="h6 mr-3 pt-1 font-weight-bold text-primary">뭐 하지,,</div>
+              <span class="fas fa-chart-line text-primary mr-2 pt-1"></span>
+              <a href="{% url 'seller:recommend' %}">
+                <div class="h6 mr-3 pt-1 font-weight-bold text-primary">매출 현황</div>
+              </a>
               <a href="./">
                 <span class="fas fa-sync-alt text-secondary pt-1" data-fa-transform="shrink-3 down-2" style="cursor:pointer;"></span>
               </a>
